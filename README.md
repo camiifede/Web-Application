@@ -5,9 +5,9 @@ This web application is designed to provide users with a comprehensive guide to 
 # Tech Stack:
 • Languages: Java, SQL, HTML, CSS, JavaScript
 
-• Frameworks: JavaEE, JSF (JavaServer Faces), Ajax
+• Frameworks: JavaEE, JSF, Ajax
 
-• Database: SQL (Structured Query Language)
+• Database: SQL
 
 • IDE: NetBeans
 # Screenshots:
