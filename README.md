@@ -4,8 +4,11 @@ A web application that details extensively greek myths and deities and is compre
 This web application is designed to provide users with a comprehensive guide to Greek myths and deities. The platform includes a user-friendly navigation system, allowing visitors to easily explore various myths and research for related books online. The application dynamically displays content retrieved from a pre-implemented database and provides an admin panel for the owner to manage the website's content. The admin can add, edit, and delete information related to myths, deities, or books, ensuring the website remains up-to-date. The application is secured with session tracking and validates user input to maintain integrity.
 # Tech Stack:
 • Languages: Java, SQL, HTML, CSS, JavaScript
+
 • Frameworks: JavaEE, JSF (JavaServer Faces), Ajax
+
 • Database: SQL (Structured Query Language)
+
 • IDE: NetBeans
 # Screenshots:
 Homepage: Displays featured myths and an introduction to Greek mythology.
