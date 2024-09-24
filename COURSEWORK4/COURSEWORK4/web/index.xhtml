@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<xhtml xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+       xmlns:h="http://xmlns.jcp.org/jsf/html"
+       xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <!-- adding a title to the page while making a call to the template to avoid repeating redundant coding -->
+    <ui:composition template="template.xhtml">
+        <ui:define name="title">Home</ui:define>
+        <ui:define name="head">
+            <!-- referencing the CSS file -->
+            <link rel="stylesheet" href="resources/css/jsfcrud.css" />
+        </ui:define>
+        <!-- defining the content that will be used for the template -->
+        <ui:define name="content">
+            <div class="indented-header">
+                <h1>Pantheon</h1>
+            </div>
+            <div class="indented">
+               Greek mythology is foundational to ancient Greek religion and culture, showcasing the complex 
+               interactions between gods and humans within its expansive pantheon and intricate stories. The mythology 
+               centers around twelve key Olympian gods: Zeus, Poseidon, Hera, Demeter, Aphrodite, Athena, Artemis, Apollo,
+               Ares, Hephaestus, Hermes, and Hestia—or Dionysus in some versions. These gods, residing on Mount Olympus, 
+               are pivotal in mythology, shaping all facets of ancient life.
+            </div>
+
+            <div>
+                <br />
+                <br />
+                <h:graphicImage library="images" name="12-gods.jpeg" style="width: 1100px; height:auto; margin-left: 200px;" />
+                <br />
+                <br />
+            </div>
+
+            <div class="indented">
+                Our website goes into great detail on these Olympian gods. Each had its own functionaries: the Horae as attendants to Zeus, the Muses to Apollo, 
+                Eilithyia and Hebe to Hera, the Erotes to Aphrodite, showing the configuration of divine power. 
+                <br />
+                <br />
+               Furthermore, we explore the Titan gods, including the twelve Uranides—Cronus, Oceanus, Iapetus, Hyperion, Crius, Coeus, Rhea, Tethys, Theia, Phoebe, 
+               Themis, and Mnemosyne—and the four Iapetionides: Atlas, Prometheus, Epimetheus, and Menoetius. These figures, along 
+               with their progeny like the Hyperionides (Helius, Selene, and Eos), the Coeides (Leto, Asteria, and Hecate), and the 
+               Creionides (Pallas, Astraeus, and Perses), create an extensive family tree central to many myths.
+            </div>
+
+            <div class="indented-header">
+                <h1>The 12 Olympians</h1>
+            </div>
+
+            <div>
+                <br />
+                <h:graphicImage library="images" name="Family tree.png" style="width: 1100px; height: auto; margin-left: 200px;" />
+            </div>
+
+            <div class="indented">
+                <br />
+                <br />
+                In addition to exploring these deities, our resources provide a clear depiction of the familial relationships 
+                within the Olympian pantheon, such as the sibling connections between Zeus, Hera, Poseidon, Hades, and Hestia, 
+                and the offspring of these gods with other deities and mortals.
+            </div>
+            <br />
+            <br />
+            
+            <div class="indented">
+                We are committed to providing in-depth scholarly analysis, historical context, and a complete portrayal of Greek 
+                mythology's enduring influence on literature and society. Join us to explore the deep-seated stories that have shaped 
+                Western thought and continue to captivate scholars and enthusiasts globally.
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+        </ui:define>
+    </ui:composition>
+</xhtml>

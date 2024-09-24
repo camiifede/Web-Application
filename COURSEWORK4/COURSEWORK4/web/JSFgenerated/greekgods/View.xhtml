@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <!--Creating a title for the view page -->
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Admin Board Greek Gods</title>
+        <h:outputStylesheet library="css" name="jsfcrud.css"/>
+    </h:head>
+
+    <!-- adding a navigation bar for crud operations -->
+    <div class="navbarAdminBoard">
+        <h:link value="Back to website" outcome="/index.xhtml"/>
+        <h:link value="View" outcome="/JSFgenerated/greekgods/List"/>
+        <h:link value="Create" outcome="/JSFgenerated/greekgods/Create"/>
+        <h:link value="Edit" outcome="/JSFgenerated/greekgods/Edit"/>
+    </div>
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <!-- displaying the selected item -->
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewGreekgodsLabel_godid}"/>
+                    <h:outputText value="#{greekgodsController.selected.godid}" title="#{bundle.ViewGreekgodsTitle_godid}"/>
+                    <h:outputText value="#{bundle.ViewGreekgodsLabel_godname}"/>
+                    <h:outputText value="#{greekgodsController.selected.godname}" title="#{bundle.ViewGreekgodsTitle_godname}"/>
+                    <h:outputText value="#{bundle.ViewGreekgodsLabel_goddescription}"/>
+                    <h:outputText value="#{greekgodsController.selected.goddescription}" title="#{bundle.ViewGreekgodsTitle_goddescription}"/>
+                    <h:outputText value="#{bundle.ViewGreekgodsLabel_imageurl}"/>
+                    <h:outputText value="#{greekgodsController.selected.imageurl}" title="#{bundle.ViewGreekgodsTitle_imageurl}"/>
+                    <h:outputText value="#{bundle.ViewGreekgodsLabel_bookname}"/>
+                    <h:outputText value="#{greekgodsController.selected.bookname}" title="#{bundle.ViewGreekgodsTitle_bookname}"/>
+                </h:panelGrid>
+                <br />
+                <!-- adding a command to destroy the item -->
+                <h:commandLink action="#{greekgodsController.destroyAndView}" value="#{bundle.ViewGreekgodsDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewGreekgodsEditLink}"/>
+                <br />
+                <h:commandLink action="#{greekgodsController.prepareCreate}" value="#{bundle.ViewGreekgodsCreateLink}" />
+                <br />
+                <h:commandLink action="#{greekgodsController.prepareList}" value="#{bundle.ViewGreekgodsShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewGreekgodsIndexLink}"/>
+                <br/>
+                <br/>
+
+            </h:form>
+    <!-- adding a footer -->
+     <footer>
+            <div class="footer">
+                <div class="crud">
+                    <a href="#" class="dropbtn">ADMIN BOARD</a>
+                    <div class="crud-dropdown">  
+                        <h:link value="Admin menu Greekgods" outcome="/JSFgenerated/greekgods/List"/>
+                        <h:link value="Admin menu Books" outcome="/JSFgenerated/books/List"/>
+                    </div>
+                </div>
+                <p>&#169; 2024 Greek Gods. All rights reserved.</p> 
+            </div>  
+        </footer>
+
+</html>

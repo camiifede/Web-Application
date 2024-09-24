@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <!--Creating a title for the view page -->
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Admin Board Books</title>
+        <h:outputStylesheet library="css" name="jsfcrud.css"/>
+    </h:head>
+
+    <!-- adding a navigation bar for crud operations -->
+    <div class="navbarAdminBoard">
+        <h:link value="Back to website" outcome="/index.xhtml"/>
+        <h:link value="View" outcome="/JSFgenerated/books/List"/>
+        <h:link value="Create" outcome="/JSFgenerated/books/Create"/>
+        <h:link value="Edit" outcome="/JSFgenerated/books/Edit"/>
+    </div>
+    <h:panelGroup id="messagePanel" layout="block">
+        <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+    </h:panelGroup>
+    <h:form>
+        <!-- displaying the selected item -->
+        <h:panelGrid columns="2">
+            <h:outputText value="#{bundle.ViewBooksLabel_bookname}"/>
+            <h:outputText value="#{booksController.selected.bookname}" title="#{bundle.ViewBooksTitle_bookname}"/>
+            <h:outputText value="#{bundle.ViewBooksLabel_bookdescription}"/>
+            <h:outputText value="#{booksController.selected.bookdescription}" title="#{bundle.ViewBooksTitle_bookdescription}"/>
+            <h:outputText value="#{bundle.ViewBooksLabel_bookurl}"/>
+            <h:outputText value="#{booksController.selected.bookurl}" title="#{bundle.ViewBooksTitle_bookurl}"/>
+        </h:panelGrid>
+        <br />
+        <!-- adding a command to destroy the item -->
+        <h:commandLink action="#{booksController.destroyAndView}" value="#{bundle.ViewBooksDestroyLink}"/>
+        <br />
+        <br />
+        <h:link outcome="Edit" value="#{bundle.ViewBooksEditLink}"/>
+        <br />
+        <h:commandLink action="#{booksController.prepareCreate}" value="#{bundle.ViewBooksCreateLink}" />
+        <br />
+        <h:commandLink action="#{booksController.prepareList}" value="#{bundle.ViewBooksShowAllLink}"/>
+        <br />
+        <br />
+        <h:link outcome="/index" value="#{bundle.ViewBooksIndexLink}"/>
+
+    </h:form>
+    <!-- adding a footer -->
+    <footer>
+        <div class="footer">
+            <div class="crud">
+                <a href="#" class="dropbtn">ADMIN BOARD</a>
+                <div class="crud-dropdown">  
+                    <h:link value="Admin menu Greekgods" outcome="/JSFgenerated/greekgods/List"/>
+                    <h:link value="Admin menu Books" outcome="/JSFgenerated/books/List"/>
+                </div>
+            </div>
+            <p>&#169; 2024 Greek Gods. All rights reserved.</p> 
+        </div>  
+    </footer>
+</html>

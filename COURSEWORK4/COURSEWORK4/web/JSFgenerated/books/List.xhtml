@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <!--Creating a title for the List page -->
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Admin Board Books</title>
+        <h:outputStylesheet library="css" name="jsfcrud.css"/>
+    </h:head>
+
+    <!-- adding a navigation bar for crud operations -->
+    <div class="navbarAdminBoard">
+        <h:link value="Back to website" outcome="/index.xhtml"/>
+        <h:link value="View" outcome="/JSFgenerated/books/List"/>
+        <h:link value="Create" outcome="/JSFgenerated/books/Create"/>
+        <h:link value="Edit" outcome="/JSFgenerated/books/Edit"/>
+    </div>
+
+
+    <br/>
+    <h:form styleClass="jsfcrud_list_form">
+        <h:panelGroup id="messagePanel" layout="block">
+            <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+        </h:panelGroup>
+        <h:outputText escape="false" value="#{bundle.ListBooksEmpty}" rendered="#{booksController.items.rowCount == 0}"/>
+        <h:panelGroup rendered="#{booksController.items.rowCount > 0}">
+            <!-- creating a table to display all the data for books in the database  -->
+            <h:dataTable value="#{booksController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{bundle.ListBooksTitle_bookname}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.bookname}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{bundle.ListBooksTitle_bookdescription}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.bookdescription}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{bundle.ListBooksTitle_bookurl}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.bookurl}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Delete"/>
+                    </f:facet>
+                    <!-- adding a button to delete any of the items -->
+                    <h:commandButton action="#{booksController.destroy}" value="#{bundle.ListBooksDestroyLink}"/>
+                </h:column>
+            </h:dataTable>
+            <!-- commands to load more data from the database -->
+            <h:outputText value="#{booksController.pagination.pageFirstItem + 1}..#{booksController.pagination.pageLastItem + 1}/#{booksController.pagination.itemsCount}" style="margin-left: 1350px;"/>&nbsp;
+            <h:commandLink action="#{booksController.previous}" value="#{bundle.Previous} #{booksController.pagination.pageSize}" rendered="#{booksController.pagination.hasPreviousPage}"/>&nbsp;
+            <h:commandLink action="#{booksController.next}" value="#{bundle.Next} #{booksController.pagination.pageSize}" rendered="#{booksController.pagination.hasNextPage}"/>&nbsp;
+        </h:panelGroup>
+    <!-- adding a footer -->
+    </h:form>
+    <footer>
+        <div class="footer">
+            <div class="crud">
+                <a href="#" class="dropbtn">ADMIN BOARD</a>
+                <div class="crud-dropdown">  
+                    <h:link value="Admin menu Greekgods" outcome="/JSFgenerated/greekgods/List"/>
+                    <h:link value="Admin menu Books" outcome="/JSFgenerated/books/List"/>
+                </div>
+            </div>
+            <p>&#169; 2024 Greek Gods. All rights reserved.</p> 
+        </div>  
+    </footer>
+
+
+
+</html>

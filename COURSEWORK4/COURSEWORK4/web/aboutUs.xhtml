@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<xhtml xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+       xmlns:h="http://xmlns.jcp.org/jsf/html"
+       xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <!-- adding a title to the page while making a call to the template to avoid repeating redundant coding -->
+    <ui:composition template="template.xhtml">
+        <ui:define name="title">About Us</ui:define>
+        <ui:define name="head">
+            <!-- referencing the CSS file -->
+            <link rel="stylesheet" href="resources/css/jsfcrud.css" />
+        </ui:define>
+        <!-- defining the content that will be used for the template -->
+        <ui:define name="content">
+            <div class="indented-header">
+                <h1>About Us</h1>
+            </div>
+            
+            <div class="indented">
+                <h2>Mission and Vision</h2>
+                <br/>
+                At Greek Gods, it is our hope that the information is
+                accurate and easily accessed by any person from the academic community or the 
+                public. Our vision is to become a leading resource for Greek mythological studies, 
+                offering insights that bridge historical knowledge with contemporary relevance.
+            </div>
+            
+            <div class="indented">
+                <h2>What We Offer</h2>
+                Our website offers an extensive range of content dedicated to exploring Greek mythology in depth. This includes:
+                <br/>
+                <h3>Detailed Articles and Essays:</h3>
+                Every work is a complete result and product of meticulous research presenting results 
+                rigorously in the subject area of scholarly analysis and commentary in Greek mythology.
+                <br/>
+                <h3>Interactive Resources:</h3>Bringing to life the ancient myths. Be it a timeline following the genealogy of gods or the maps of mythological sites.
+                <br/>
+            </div>
+            
+            <div class="indented">
+                <h2>Our Community</h2>
+                We believe in bringing together all those people who are like-minded enthusiasts of Greek mythology. We will provide comment sections in the future to most of the posts,
+                live expert-hosted webinars, and much more.
+                <br/>
+            </div>
+            
+            <div class="indented">
+                <h2>Join Us</h2>
+                Explore the legends that have fascinated humanity for millennia. Whether you are a student seeking 
+                to understand the complexities of mythological narratives, a teacher looking for rich educational content,
+                or a scholar conducting research, Greek Gods is your gateway to the world of Greek gods and heroes.
+                <br/>
+            </div>
+            
+            <div class="indented">
+                <h2>Contact Us</h2>
+                We are always looking to improve and expand our offerings. If you have suggestions, questions, 
+                or would like to contribute, please do not hesitate to contact us at Greek gods.
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+            </div>
+        </ui:define>
+    </ui:composition>
+</xhtml>            

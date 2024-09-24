@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <!--Creating a title for the edit page -->
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Edit Greek Gods</title>
+        <h:outputStylesheet library="css" name="jsfcrud.css"/>
+    </h:head>
+
+    <!-- adding a navigation bar for crud operations -->
+    <div class="navbarAdminBoard">
+        <h:link value="Back to website" outcome="/index.xhtml"/>
+        <h:link value="View" outcome="/JSFgenerated/greekgods/List"/>
+        <h:link value="Create" outcome="/JSFgenerated/greekgods/Create"/>
+        <h:link value="Edit" outcome="/JSFgenerated/greekgods/Edit"/>
+    </div>
+    <h:panelGroup id="messagePanel" layout="block">
+        <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+    </h:panelGroup>
+    <h:form>
+        <br/>
+        <br/>
+        <br/>
+        <!-- adding input texts for the admin to create new books -->
+        <h:panelGrid columns="2">
+            <h:outputLabel value="#{bundle.EditGreekgodsLabel_godid}" for="godid" />
+            <h:inputText id="godid" value="#{greekgodsController.selected.godid}" title="#{bundle.EditGreekgodsTitle_godid}" required="true" requiredMessage="#{bundle.EditGreekgodsRequiredMessage_godid}"/>
+            <h:outputLabel value="#{bundle.EditGreekgodsLabel_godname}" for="godname" />
+            <h:inputText id="godname" value="#{greekgodsController.selected.godname}" title="#{bundle.EditGreekgodsTitle_godname}" />
+            <h:outputLabel value="#{bundle.EditGreekgodsLabel_goddescription}" for="goddescription" />
+            <h:inputText id="goddescription" value="#{greekgodsController.selected.goddescription}" title="#{bundle.EditGreekgodsTitle_goddescription}" />
+            <h:outputLabel value="#{bundle.EditGreekgodsLabel_imageurl}" for="imageurl" />
+            <h:inputText id="imageurl" value="#{greekgodsController.selected.imageurl}" title="#{bundle.EditGreekgodsTitle_imageurl}" />
+            <h:outputLabel value="BookName" for="bookname" />
+            <h:selectOneMenu id="bookname" value="#{greekgodsController.selected.bookname}" title="#{bundle.EditGreekgodsTitle_bookname}" >
+                <f:selectItems value="#{booksController.itemsAvailableSelectOne}"/>
+            </h:selectOneMenu>
+        </h:panelGrid>
+        <br />
+        <!-- button to save the information entered -->
+        <h:commandButton action="#{greekgodsController.update}" value="#{bundle.EditGreekgodsSaveLink}" style="margin-left:150px;"/>
+        <br/>
+        <br/>
+    </h:form>
+    <!-- adding a footer -->
+    <footer>
+        <div class="footer">
+            <div class="crud">
+                <a href="#" class="dropbtn">ADMIN BOARD</a>
+                <div class="crud-dropdown">  
+                    <h:link value="Admin menu Greekgods" outcome="/JSFgenerated/greekgods/List"/>
+                    <h:link value="Admin menu Books" outcome="/JSFgenerated/books/List"/>
+                </div>
+            </div>
+            <p>&#169; 2024 Greek Gods. All rights reserved.</p> 
+        </div>  
+    </footer>
+
+
+</html>
