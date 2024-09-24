@@ -11,14 +11,25 @@ This web application is designed to provide users with a comprehensive guide to 
 Homepage: Displays featured myths and an introduction to Greek mythology.
 ![image](https://github.com/user-attachments/assets/377576eb-1277-4014-977d-82e27910a356)
 ![image](https://github.com/user-attachments/assets/b1cf6cba-8105-4901-88c8-0bcefd79522a)
+![image](https://github.com/user-attachments/assets/f480d52b-95a8-4a57-8c65-b073c6d305b9)
+
+
 
 
 Navigation Bar: Offers categories like Deities, Myths, and Books.
+
 Admin Panel: A secure interface where the admin can add or modify myths and deities.
-Purchase Page: Registered users can purchase books after filling out a registration form.
+![image](https://github.com/user-attachments/assets/9cfbe322-1b85-4c9e-8876-f21906fed44e)
+
+
 # Features:
 • User-Friendly Navigation: Intuitive navigation bar that helps users explore myths, deities, and related content.
+
 • Dynamic Content Management: Admin can add, update, or delete myths, deities, and books from a secure interface. The content is displayed in real-time on the website.
+
 • Book Purchasing System: Registered users can purchase books directly from the site.
+
 • Validation and Security: Input validation through JSF validators and session tracking for security.
+
 • CRUD Operations: Full Create, Read, Update, and Delete functionality for the admin to manage content efficiently.
+
